@@ -17,14 +17,17 @@ var Cards = sequelize.define('cards', {
 		primaryKey: true
 	},
 	titulo:{
-		type: Sequelize.INTEGER
-	},
-	contenido:{
 		type: Sequelize.STRING,
 	},
+	contenido:{
+		type: Sequelize.TEXT
+	}
 });
 
 
 
-module.exports.Cards = Cards;
-module.exports.sequelize = sequelize;
+sequelize.sync().then(() => {
+  console.log('bien')
+}).catch(error => {
+  console.log('mal')
+})

@@ -7,6 +7,7 @@ var cors = require('cors');
 var app = express();
 
 // las Rutas van aqui
+var cards = require('./router/CardRouter.js');
 
 // Parser para los request
 app.use(cors({
@@ -21,5 +22,6 @@ res.sendFile(path.join(__dirname + '/client/dist/index.html'));
 }); */
 
 // Cargar Rutas
+app.use('/api',cards);
 
 module.exports = app;

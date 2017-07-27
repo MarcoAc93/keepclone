@@ -1,0 +1,18 @@
+.example-card {
+  width: 350px;
+  height: auto;
+  margin-left: 3.8%;
+  float: left;
+  margin-bottom: 10px;
+}
+
+.card-color{
+	background-color: #7B1FA2;
+}
+
+.padre{
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

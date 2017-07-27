@@ -1,0 +1,28 @@
+
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<form>
+			<md-toolbar color="primary">
+				<md-input-container>
+					<input mdInput placeholder="Titulo">
+				</md-input-container>
+			</md-toolbar>
+		</form>
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col-md-4" *ngFor="let card of cards">
+		<md-card class="card-color">
+		  <md-card-header>
+			 <md-card-title>{{card.titulo}}</md-card-title>
+		  </md-card-header>
+		  <md-card-content>
+			 <p>
+				{{card.contenido}}
+			 </p>
+		  </md-card-content>
+		</md-card>
+		<br>
+	</div>
+</div>

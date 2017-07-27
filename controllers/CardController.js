@@ -11,7 +11,7 @@ function getAll(req, res){
 	});
 }
 
-function getOne(req, res){
+function getOneLike(req, res){
 	var params = req.params;
 	models.Cards.findAll({
 		where:{
@@ -20,6 +20,17 @@ function getOne(req, res){
 			}
 		}
 	}).then(card =>{
+		if(!card){
+			res.send({success:false, message:'No se encontró el registro deseado'});
+		} else {
+			res.send({success:true, data:card});
+		}
+	});
+}
+
+function getOne(req, res){
+	var idCard = req.params.idCard;
+	models.Cards.findById(idCard).then(card =>{
 		if(!card){
 			res.send({success:false, message:'No se encontró el registro deseado'});
 		} else {
@@ -100,6 +111,7 @@ function deleteCard(req, res){
 
 module.exports = {
 	getOne,
+	getOneLike,
 	getAll,
 	createCard,
 	updateCard,

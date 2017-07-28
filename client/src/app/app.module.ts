@@ -26,6 +26,7 @@ import { CardService } from './services/card.service';
 		MdButtonModule,
 		HttpModule,
 		FormsModule,
+		BrowserAnimationsModule,
 		ReactiveFormsModule
 	],
 	providers: [CardService],

@@ -93,7 +93,6 @@ function updateCard(req, res){
 			}
 		}
 	}
-
 }
 
 function deleteCard(req, res){

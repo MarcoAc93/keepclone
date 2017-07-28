@@ -16,6 +16,7 @@ export class CardComponent implements OnInit {
 	processing = false;
 	option = 1;
 	idCard;
+	color;
 	constructor(private cardService: CardService, private formBuilder: FormBuilder) {
 		this.createNewBlogForm();
 	}
@@ -110,5 +111,13 @@ export class CardComponent implements OnInit {
 			this.cards = [];
 			this.cards = cards.data;
 		})
+	}
+
+	pickColor(opcion){
+		if(opcion == 1){
+			this.color = 1;
+		} else if(opcion == 2){
+			this.color = 2;
+		}
 	}
 }

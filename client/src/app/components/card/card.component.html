@@ -62,7 +62,7 @@
 <br>
 <div class="row">
 	<div class="col-md-4" *ngFor="let card of cards">
-		<md-card class="card-color">
+		<md-card class="card-color" [style.background]="color == 1 ? 'red':'blue'">
 		  <md-card-header>
 			 <md-card-title>{{card.titulo}}</md-card-title>
 		  </md-card-header>
@@ -74,6 +74,14 @@
 			<md-card-actions>
 				<button md-raised-button (click)="edit(card.idCard)">Editar</button>
 				<button md-raised-button (click)="delete(card.idCard)">Eliminar</button>
+				<md-menu #appMenu="mdMenu">
+				  <button md-menu-item (click)="pickColor(1)">Rojo</button>
+				  <button md-menu-item (click)="pickColor(2)">Azul</button>
+				</md-menu>
+
+				<button md-icon-button [mdMenuTriggerFor]="appMenu">
+				   <md-icon>palette</md-icon>
+				</button>
 			</md-card-actions>
 		</md-card>
 		<br>

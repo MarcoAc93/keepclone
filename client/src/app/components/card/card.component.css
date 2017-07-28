@@ -9,10 +9,3 @@
 .card-color{
 	background-color: #7B1FA2;
 }
-
-.padre{
-	height: 150px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}

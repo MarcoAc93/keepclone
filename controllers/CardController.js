@@ -2,6 +2,7 @@ var models = require('../models/model.js');
 
 function getAll(req, res){
 	models.Cards.findAll({
+		order: [['idCard', 'DESC']],
 	}).then(cards => {
 		if (!cards) {
 			res.send('Hubo un error en la consulta');
